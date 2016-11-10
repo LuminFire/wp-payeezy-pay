@@ -1,0 +1,167 @@
+<style>
+#x_first_name {
+width:250px;
+height:30px;
+padding:0 0 0 6px;
+border: 1px solid #222;
+}
+
+#x_last_name {
+width:250px;
+height:30px;
+padding:0 0 0 6px;
+border: 1px solid #222;
+}
+
+#x_company {
+width:250px;
+height:30px;
+padding:0 0 0 6px;
+border-color:#222;
+}
+
+#x_address {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_city {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_state {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+select#x_state,
+select#x_country {
+  padding:0 0 0 6px;
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+#x_country {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_invoice_num {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_po_num {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_reference_3 {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_user_1 {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_user_2 {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_user_3 {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_email {
+  width:250px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_phone {
+  width:125px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_zip {
+  width:125px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#entered_coupon {
+  width:200px;
+  height:30px;
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+#x_description {
+  padding:0 0 0 6px;
+  border: 1px solid #222;
+}
+
+
+label {
+  font-weight:700;
+  display:block;
+}
+
+
+#x_amount {
+  width:100px;
+  height:30px;
+  padding:0 0 0 6px;
+  border-color:#222;
+  border-width:1px;
+  margin-bottom:20px;
+
+}
+
+#x_amount2 {
+  width:100px;
+  height:30px;
+  padding:0 0 0 6px;
+  border-color:#222;
+  border-width:1px;
+  margin-bottom:20px;
+}
+
+#wp_payeezy_payment_form input[type="submit"] {
+width: auto;
+}
+
+</style>
