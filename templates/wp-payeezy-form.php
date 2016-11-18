@@ -3,7 +3,8 @@ $wp_payeezy_form_stylesheet = plugins_url('wp-payeezy-pay/css/stylesheet.css');
 echo file_get_contents( "$wp_payeezy_form_stylesheet" ); ?>
 <!-- v.2.68 -->
 <div id="wp_payeezy_payment_form">
-<form action="<?php echo $pay_file;?>" method="post">
+<form method="post">
+<?php wp_nonce_field( 'wp_payeezy_post', 'wp_payeezy_pay' ); ?>
 <input name="x_recurring_billing_id" value="<?php echo $x_recurring_billing_id;?>" type="hidden" >
 <input name="x_login" value="<?php echo $x_login;?>" type="hidden" >
 <input name="mode" value="<?php echo $mode;?>" type="hidden" >

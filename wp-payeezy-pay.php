@@ -8,6 +8,8 @@ Author: Rick Rottman
 Author URI: http://gravityrocket.com/
 */
 
+define( 'WP_PAYEEZY_DIR', trailingslashit( dirname( __FILE__ ) ) );
+
 function wppayeezypaymentform() {
 $x_login = get_option('x_login');
 $x_recurring_billing_id = get_option('x_recurring_billing_id');
@@ -20,29 +22,6 @@ $wp_payeezy_states = plugins_url('wp-payeezy-pay/select/states.txt');
 $wp_payeezy_countries = plugins_url('wp-payeezy-pay/select/countries.txt'); 
 $url_to_stylesheet = $wp_payeezy_stylesheet; 
 
-
-if ( $mode2 == "pay") {
-  $pay_file = plugins_url('wp-payeezy-pay/pay.php'); 
-}
-// Payments WITH the option of making the payment recurring.
-  elseif ( $mode2 == "pay-rec" ) {
-      $pay_file = plugins_url('wp-payeezy-pay/pay-rec.php'); 
-}
-
-// Payments WITH the option of making the payment recurring.
-elseif ( $mode2 == "pay-rec-req" ) {
-  $pay_file = plugins_url('wp-payeezy-pay/pay-rec.php'); 
-}
-
-// Donations WITHOUT the option of making the donation recurring.
-elseif ( $mode2 == "donate"  ) {
-    $pay_file = plugins_url('wp-payeezy-pay/donate.php'); 
-}
-
-// Donations WITH the option of making the donation recurring.
-else {
-    $pay_file = plugins_url('wp-payeezy-pay/donate-rec.php'); 
-}
 
 if ( $button_text == "pay-now") {
   $button = 'Pay Now'; 
@@ -112,11 +91,46 @@ if ( $overridden_template = locate_template( 'wp-payeezy-form.php' ) ) {
 } else {
 	// If neither the child nor parent theme have overridden the template,
 	// we load the template from the 'templates' sub-directory.
-	include dirname( __FILE__ ) . '/templates/wp-payeezy-form.php';
+	include WP_PAYEEZY_DIR . 'templates/wp-payeezy-form.php';
 }
 
 return ob_get_clean();
 
+}
+
+add_action( 'template_include', 'wppayeezypay_maybe_post' );
+function wppayeezypay_maybe_post( $original_template ) {
+	if ( isset( $_POST['wp_payeezy_pay'] ) &&
+		 wp_verify_nonce( $_POST['wp_payeezy_pay'], 'wp_payeezy_post' ) ) {
+
+		$mode2 = get_option ('mode2') ; // payments or donations
+		if ( $mode2 == "pay") {
+			$pay_file = WP_PAYEEZY_DIR . 'pay.php';
+		}
+
+		// Payments WITH the option of making the payment recurring.
+		elseif ( $mode2 == "pay-rec" ) {
+			$pay_file = WP_PAYEEZY_DIR . 'pay-rec.php';
+		}
+
+		// Payments WITH the option of making the payment recurring.
+		elseif ( $mode2 == "pay-rec-req" ) {
+			$pay_file = WP_PAYEEZY_DIR . 'pay-rec.php';
+		}
+
+		// Donations WITHOUT the option of making the donation recurring.
+		elseif ( $mode2 == "donate"  ) {
+			$pay_file = WP_PAYEEZY_DIR . 'donate.php';
+		}
+
+		// Donations WITH the option of making the donation recurring.
+		else {
+			$pay_file = WP_PAYEEZY_DIR . 'donate-rec.php';
+		}
+		return $pay_file;
+	}
+	// Else.
+	return $original_template;
 }
 
 // create custom plugin settings menu
