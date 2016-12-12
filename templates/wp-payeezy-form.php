@@ -1,5 +1,5 @@
 <?php
-$wp_payeezy_form_stylesheet = plugins_url('wp-payeezy-pay/css/stylesheet.css'); 
+$wp_payeezy_form_stylesheet = plugins_url('wp-payeezy-pay/css/stylesheet.css');
 echo file_get_contents( "$wp_payeezy_form_stylesheet" ); ?>
 <!-- v.2.68 -->
 <div id="wp_payeezy_payment_form">
@@ -9,8 +9,8 @@ echo file_get_contents( "$wp_payeezy_form_stylesheet" ); ?>
 <input name="x_login" value="<?php echo $x_login;?>" type="hidden" >
 <input name="mode" value="<?php echo $mode;?>" type="hidden" >
 <input name="x_currency_code" value="<?php echo $x_currency_code;?>" type="hidden" >
-<p><label>First Name</label><input name="x_first_name" value="" id="x_first_name" type="text" required></p> 
-<p><label>Last Name</label><input name="x_last_name" id="x_last_name" value="" type="text" required></p> 
+<p><label>First Name</label><input name="x_first_name" value="" id="x_first_name" type="text" required></p>
+<p><label>Last Name</label><input name="x_last_name" id="x_last_name" value="" type="text" required></p>
 <?php if (!empty($x_company)) {
   echo '<p><label>';
   echo $x_company;
@@ -21,14 +21,14 @@ echo file_get_contents( "$wp_payeezy_form_stylesheet" ); ?>
 else {
   echo '<input name="x_company" value="" type="hidden" >';
   }?>
-<p><label>Street Address</label><input name="x_address" id="x_address" value="" type="text" required></p> 
-<p><label>City</label><input name="x_city" id="x_city" value="" type="text" required></p> 
+<p><label>Street Address</label><input name="x_address" id="x_address" value="" type="text" required></p>
+<p><label>City</label><input name="x_city" id="x_city" value="" type="text" required></p>
 <p><label>State</label><select name="x_state" id="x_state" required>
 <?php
-echo file_get_contents( "$wp_payeezy_states" ); // 
+echo file_get_contents( "$wp_payeezy_states" ); //
 ?>
 </select></p>
-<p><label>Zip Code</label><input name="x_zip" id="x_zip" value="" type="text" required></p> 
+<p><label>Zip Code</label><input name="x_zip" id="x_zip" value="" type="text" required></p>
 <p><label>Country</label><select id="x_country" name="x_country" onchange="switch_province()" tabindex="10">
 <?php
 echo file_get_contents( "$wp_payeezy_countries" ); //
@@ -74,8 +74,8 @@ else {
   echo '<input name="x_reference_3" value="" type="hidden">';
   }
 
-//// User Defined 1 //// 
-if (!empty($x_user1)) {                                                              
+//// User Defined 1 ////
+if (!empty($x_user1)) {
     echo '<p><label>';
   echo $x_user1;
   echo '</label>';
@@ -154,11 +154,11 @@ else {
 
 
 if (!empty($x_amount)) {
-  
+
   echo '<input name="x_amount" value="';
   echo $x_amount;
   echo '" type="hidden" id="x_amount" >';
-  
+
   }
 
 else {
@@ -167,7 +167,7 @@ if (($mode2 == "donate") || ($mode2 == "donate-rec")) {
 ?>
 <p><label>Donation Amount</label>
 <?php
-//$wp_payeezy_donation_amounts = plugins_url('wp-payeezy-pay/select/donation_amounts.php'); 
+//$wp_payeezy_donation_amounts = plugins_url('wp-payeezy-pay/select/donation_amounts.php');
 //echo file_get_contents( "$wp_payeezy_donation_amounts" ); ?>
 <input type="radio" name="x_amount1" value="10.00"> $10&nbsp;<?php echo $x_currency_code;?></br>
 <input type="radio" name="x_amount1" value="25.00"> $25&nbsp;<?php echo $x_currency_code;?></br>
@@ -178,7 +178,7 @@ if (($mode2 == "donate") || ($mode2 == "donate-rec")) {
 </p>
 <?php
 }
- 
+
 else {
 echo '<p><label>Amount</label><input name="x_amount" id="x_amount" value="" min="1" step="0.01" type="number">&nbsp;';
 echo $x_currency_code;
