@@ -34,7 +34,7 @@ echo file_get_contents( "$wp_payeezy_states" ); //
 echo file_get_contents( "$wp_payeezy_countries" ); //
 ?>
 </select></p>
-     
+
 <?php
 
 //// Invoice ////
