@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Payeezy Pay
-Version: 2.68
+Version: 2.69
 Plugin URI: http://gravityrocket.com/
 Description: Connects a WordPress site to First Data's Payeezy Gateway using the Payment Page/Hosted Checkout method of integration. 
 Author: Rick Rottman
